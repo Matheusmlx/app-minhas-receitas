@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="720dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_color"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Nova Receita"
+        app:titleTextColor="@color/white">
+
+        <Button
+            android:id="@+id/adicionarItemRascunho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:text="Adicionar"
+            android:textColor="@color/toolbar_color" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/txtNomeReceita"
+        android:layout_width="match_parent"
+        android:hint="Nome da Receita:"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:padding="8dp"
+        android:maxLength="30"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
+
+    <EditText
+        android:id="@+id/edNome"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:maxLength="20"
+        android:background="@drawable/edit_text_border"
+        android:hint="Ingrediente:"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeReceita" />
+
+    <EditText
+        android:id="@+id/edQuantidade"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/edit_text_border"
+        android:hint="Quantidade:"
+        android:inputType="number"
+        android:padding="8dp"
+        android:maxLength="3"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescricao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/edNome"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeReceita" />
+
+    <EditText
+        android:id="@+id/txtDescricao"
+        android:layout_width="367dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:maxLength="80"
+        android:background="@drawable/edit_text_border"
+        android:hint="Descrição"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edNome"
+        />
+
+    <TextView
+        android:id="@+id/label_nome_rascunho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nome Ingrediente"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
+
+    <TextView
+        android:id="@+id/label_quantidade_rascunho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Quantidade"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintStart_toEndOf="@+id/label_nome_rascunho"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_nome_rascunho"
+         />
+
+    <TextView
+        android:id="@+id/box_descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_item"
+        tools:layout_editor_absoluteX="22dp" />
+
+    <Button
+        android:id="@+id/salvarReceita"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/toolbar_color"
+        android:text="Salvar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_descricao"
+        app:layout_constraintVertical_bias="0.787"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
